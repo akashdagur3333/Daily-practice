@@ -1,7 +1,7 @@
 const { WebClient } = require('@slack/web-api');
 
 // Initialize Slack WebClient with your access token
-// const slackClient = new WebClient('xoxb-7312579863378-7312727092867-R1dI1c2X5ethgEUk0VBhwiYZ');
+// const slackClient = new WebClient('');
 // Function to validate and create a new channel
 // async function createChannel(channelName) {
 //     try {
@@ -36,7 +36,7 @@ const { WebClient } = require('@slack/web-api');
 
 
 // Initialize Slack WebClient with your token and appropriate scopes
-// const token = 'xoxb-7312579863378-7312727092867-R1dI1c2X5ethgEUk0VBhwiYZ'; // Replace with your actual token
+// const token = ''; // Replace with your actual token
 // const app = new WebClient(token, {
 //   scopes: [
 //     'channels:read',

@@ -1,7 +1,7 @@
 
 // const { WebClient } = require('@slack/web-api');
 
-// const slackClient = new WebClient('xoxb-7312579863378-7312727092867-R1dI1c2X5ethgEUk0VBhwiYZ');
+// const slackClient = new WebClient('');
 
 
 // async function createChannel(channelName) {
