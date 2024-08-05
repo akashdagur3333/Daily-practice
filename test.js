@@ -55,9 +55,6 @@ console.log('welcome back ')
 
 // console.log(data['White noise'])
 
-
-
-
 // const data=[
 //     {
 //       id: 1,
@@ -216,11 +213,6 @@ console.log('welcome back ')
 //     }).join('\n');
 //   };
 
-
-
-
-
-
-  
 //   const result =convertToSUbtitle(data)
 //   console.log(result)
+
