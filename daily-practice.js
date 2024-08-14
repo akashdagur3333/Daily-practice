@@ -324,3 +324,22 @@ console.log('let start with daily practice')
 // console.log(areAnagrams("listen", "silent"));  // Output: true
 // console.log(areAnagrams("hello", "oellh"));    // Output: true
 // console.log(areAnagrams("hello", "world")); // false
+
+
+// const substring =(name)=>{
+//     let storage=new Map();
+//     let maxLength = 0;
+//     for(let left=0, right=0; right<name.length;right++){
+//         if(storage.has(name[right])){
+//             left=Math.max(storage.get(name[right])+1,left);
+//         }
+//         storage.set(name[right],right);
+//         maxLength=Math.max(maxLength,right-left+1)
+//     }
+//     return maxLength
+// }
+
+// Input: s = "abcabcbb"
+// console.log(substring(s))
+// Output: 3
+// Explanation: The answer is "abc", with the length of 3.
