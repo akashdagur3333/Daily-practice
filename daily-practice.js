@@ -1,3 +1,4 @@
+const { str } = require("16");
 
 console.log('let start with daily practice')
 
@@ -379,25 +380,115 @@ console.log('let start with daily practice')
 // console.log(result)
 
 
-var twoSum = function(nums, target) {
-    let remaining=0;
-    let foundIndex=[]
-    for(let i =0;i<nums.length;i++){
+// var twoSum = function(nums, target) {
+//     let remaining=0;
+//     let foundIndex=[]
+//     for(let i =0;i<nums.length;i++){
    
-        if(nums[i]<target){
-           foundIndex.push(i)
-        }
-        remaining=target-nums[i];
-        for(let j =i+1;j<nums.length;j++){
-            if(remaining==nums[j]){
-                remaining-=nums[j];
-                foundIndex.push(j)
-                return foundIndex
-            }
-        }
-     foundIndex=[]
-    }
-};
+//         if(nums[i]<target){
+//            foundIndex.push(i)
+//         }
+//         remaining=target-nums[i];
+//         for(let j =i+1;j<nums.length;j++){
+//             if(remaining==nums[j]){
+//                 remaining-=nums[j];
+//                 foundIndex.push(j)
+//                 return foundIndex
+//             }
+//         }
+//      foundIndex=[]
+//     }
+// };
 
-const res=twoSum([3,3], 6)
-console.log(res)
+// const res=twoSum([3,3], 6)
+// console.log(res)
+
+// var isPalindrome = function(x) {
+//    x= JSON.stringify(x)
+//     const d= x.split('')
+//     console.log(d)
+//     console.log(d.reverse())
+//    const da= JSON.stringify(d) === JSON.stringify(d.reverse())
+//     if(da==true){
+//         return true
+//     }
+   
+//    return false;
+
+
+// };
+
+
+// function isPalindrome(x) {
+//     // Negative numbers are not palindromes
+//     if (x < 0) return false;
+
+//     // Convert the number to a string
+//     const str = x.toString();
+
+//     // Compare the original string with the reversed string
+//     const reversedStr = str.split('').reverse().join('');
+    
+//     return str === reversedStr;
+// }
+
+
+// console.log(isPalindrome(-121))
+
+
+// const roman = {
+//     'I': 1,
+//     'V': 5,
+//     'X': 10,
+//     'L': 50,
+//     'C': 100,
+//     'D': 500,
+//     'M': 1000
+// };
+// var romanToInt = function(s) {
+//     let sum=0;
+//     for (let i = 0; i < s.length; i++) {
+//         // If the current numeral is less than the next numeral, subtract it
+//         if (i < s.length - 1 && roman[s[i]] < roman[s[i + 1]]) {
+//             sum -= roman[s[i]];
+//         } else {
+//             // Otherwise, add it
+//             sum += roman[s[i]];
+//         }
+//     }
+
+//     return sum
+// };
+
+// console.log(romanToInt("MCMXCIV"))
+
+
+// var longestCommonPrefix = function(strs) {
+//     // If the array is empty, return an empty string
+//     if (strs.length === 0) return "";
+
+//     // Start by assuming the first string is the longest common prefix
+//     let prefix = strs[0];
+
+//     // Compare the prefix with each string in the array
+//     for (let i = 1; i < strs.length; i++) {
+//         // Loop until the current string starts with the prefix
+//         while (strs[i].indexOf(prefix) !== 0) {
+//             // Reduce the prefix by one character from the end
+//             console.log(prefix.substring(0, prefix.length - 1))
+//             prefix = prefix.substring(0, prefix.length - 1);
+
+//             // If the prefix becomes empty, return ""
+//             if (prefix === "") return "";
+//         }
+//     }
+
+//     return prefix;
+// };
+
+// // Example usage:
+// console.log(longestCommonPrefix(["flower", "flow", "flight"])); // Output: "fl"
+// console.log(longestCommonPrefix(["dog", "racecar", "car"]));    // Output: ""
+
+
+
