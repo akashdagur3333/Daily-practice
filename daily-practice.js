@@ -343,3 +343,61 @@ console.log('let start with daily practice')
 // console.log(substring(s))
 // Output: 3
 // Explanation: The answer is "abc", with the length of 3.
+
+
+
+// function getLucky(s, k) {
+//     let data;
+//     for(let d of s){
+//         if(data!=undefined){
+//             data+=transformLetterToNumber(d).toString()
+//         }
+//         else{
+//             data=transformLetterToNumber(d).toString()
+//         }
+//     }
+//     let sum=0;
+//     while(k!=0){
+//         for(let i =0 ; i<data.length;i++){
+//             sum+=Number(data[i])
+//            }
+//            data=sum.toString()
+//            sum=0;
+//            k--;
+//     }
+
+
+//    return data;
+// };
+
+// function transformLetterToNumber(letter) {
+//   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+//   return alphabet.indexOf(letter.toLowerCase())+1;  
+// }
+
+// const result=getLucky("leetcode",  2)
+// console.log(result)
+
+
+var twoSum = function(nums, target) {
+    let remaining=0;
+    let foundIndex=[]
+    for(let i =0;i<nums.length;i++){
+   
+        if(nums[i]<target){
+           foundIndex.push(i)
+        }
+        remaining=target-nums[i];
+        for(let j =i+1;j<nums.length;j++){
+            if(remaining==nums[j]){
+                remaining-=nums[j];
+                foundIndex.push(j)
+                return foundIndex
+            }
+        }
+     foundIndex=[]
+    }
+};
+
+const res=twoSum([3,3], 6)
+console.log(res)
