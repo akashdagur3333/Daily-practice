@@ -490,5 +490,425 @@ console.log('let start with daily practice')
 // console.log(longestCommonPrefix(["flower", "flow", "flight"])); // Output: "fl"
 // console.log(longestCommonPrefix(["dog", "racecar", "car"]));    // Output: ""
 
+// const bracketMap = {
+//     '(' :')',
+//     '{': '}',
+//     '[': ']'
+// };
 
+// var isValid = function(s) {
+//     if(s.length%2!=0){
+//         return false;
+      
+//         }
+//         let start=0;
+//         let end=s.length-1;
+//         while(start<end){
+//            if( bracketMap[s[start]]!=s[end]){
+//             return false
+//            }
+//             start++;
+//             end--
+//     }
+//     return true
+// };
+
+// console.log(isValid( "([])"))
+
+// const bracketMap = {
+//     '(': ')',
+//     '{': '}',
+//     '[': ']'
+// };
+
+// var isValid = function(s) {
+//     // If the string has an odd length, it cannot be valid
+//     if (s.length % 2 !== 0) {
+//         return false;
+//     }
+
+//     // Stack to keep track of opening brackets
+//     const stack = [];
+
+//     for (let i = 0; i < s.length; i++) {
+//         let char = s[i];
+//         // If it's an opening bracket, push it onto the stack
+//         if (bracketMap[char]) {
+//             stack.push(char);
+
+//         } else {
+//             // If it's a closing bracket, check if it matches the last opened one
+//             const lastOpened = stack.pop();
+//             console.log(bracketMap[lastOpened],char)
+//             if (bracketMap[lastOpened] !== char) {
+//                 return false;
+//             }
+//         }
+//     }
+
+//     // If the stack is empty at the end, it means all brackets were properly closed
+//     return stack.length === 0;
+// };
+
+// var isValid = function(s) {
+//     let stack = []; // create an empty stack to store opening brackets
+//     for (let c of s) { // loop through each character in the string
+//         if (c === '(' || c === '{' || c === '[') { // if the character is an opening bracket
+//             stack.push(c); // push it onto the stack
+//         } else { // if the character is a closing bracket
+//             if (!stack.length || // if the stack is empty or 
+//                 (c === ')' && stack[stack.length - 1] !== '(') || // the closing bracket doesn't match the corresponding opening bracket at the top of the stack
+//                 (c === '}' && stack[stack.length - 1] !== '{') ||
+//                 (c === ']' && stack[stack.length - 1] !== '[')) {
+//                 return false; // the string is not valid, so return false
+//             }
+//             stack.pop(); // otherwise, pop the opening bracket from the stack
+//         }
+//         console.log(stack)
+//     }
+//     return !stack.length; // if the stack is empty, all opening brackets have been matched with their corresponding closing brackets,
+//                           // so the string is valid, otherwise, there are unmatched opening brackets, so return false
+// };
+
+// // Example usage:
+// console.log(isValid("([])"));     // Output: true
+// console.log(isValid("()[]{}"));   // Output: true
+// console.log(isValid("(]"));       // Output: false
+// console.log(isValid("([)]"));     // Output: false
+// console.log(isValid("{[]}"));     // Output: true
+
+
+// var mergeTwoLists = function(list1, list2) {
+//     if(list1.length==0 && list2.length==0){
+//         return []
+//     }
+//     if(list1.length!=0 && list2.length==0){
+//         return list1
+//     }
+//     if(list2.length!=0 && list1.length==0){
+//         return list2
+//     }
+//     const result=[];
+//     let len=list1.length<list2.length?list1.length:list2.length;
+//    for(i=0;i<len;i++){
+//     if(list1[i]<list2[i]){
+//         result.push(list1[i])
+//         result.push(list2[i])
+
+//     }
+//     else{
+//         result.push(list2[i])
+//         result.push(list1[i])
+
+ 
+//     }
+//     console.log(result)
+//    }
+// };
+
+// Definition for singly-linked list.
+// function ListNode(val, next = null) {
+//     this.val = val;
+//     this.next = next;
+// }
+
+// var mergeTwoLists = function(list1, list2) {
+//     // Create a dummy node to simplify the merging process
+//     let dummy = new ListNode();
+//     let current = dummy;
+
+//     // While both lists are not empty
+//     while (list1 !== null && list2 !== null) {
+//         if (list1.val < list2.val) {
+//             current.next = list1;
+//             list1 = list1.next;
+//         } else {
+//             current.next = list2;
+//             list2 = list2.next;
+//         }
+//         current = current.next;
+//     }
+
+//     // If one of the lists is not empty, append the rest of the elements
+//     current.next = list1 !== null ? list1 : list2;
+
+//     // Return the merged list starting from the node after the dummy node
+//     return dummy.next;
+// };
+
+// // Example usage with linked lists:
+// let list1 = new ListNode(1, new ListNode(2, new ListNode(4)));
+// let list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+// console.log(mergeTwoLists(list1, list2));
+
+
+// Given an array of integers nums and an integer target, return the indices of the two numbers such that they add up to the target. You may assume that each input would have exactly one solution.
+
+
+// const twoSum=(arr,target)=>{
+//     const map=new Map()
+//     for(let i=0;i<arr.length;i++){
+//     const complement=target-arr[i];
+//     if(map.has(complement)){
+//         return [map.get(complement),i]
+//     }
+//     map.set(arr[i],i)
+//     }
+//     return []
+// }
+
+// console.log(twoSum([2, 7, 11, 15], 9)); // Output: [0, 1]
+
+
+
+
+
+
+// const twoSum=(arr,target)=>{
+//     const map=new Map()
+//     for(let i=0;i<arr.length;i++){
+//         const complement=target-arr[i]
+//      if(map.has(complement)){
+//         return [map.get(complement),i]
+//      }
+//      map.set(arr[i],i)
+//     }
+//     return []
+// }
+
+
+
+// console.log(twoSum([2, 7, 11, 15], 9)); // Output: [0, 1]
+
+
+
+
+// Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+
+// const maxSubArray=(arr)=>{
+//     let currentsum=arr[0];
+//     let maxsum=arr[0]
+//     if(arr.length){
+//         for(let i=0;i<arr.length;i++){
+//           currentsum=Math.max(arr[i],currentsum+arr[i]);
+//           maxsum=Math.max(maxsum,currentsum);
+//         }
+//         return maxsum
+//     }
+//     return '';
+// }
+
+// console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])); // Output: 6
+
+
+
+// Write a function to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string "".
+
+// const longestCommonPrefix=(arr)=>{
+//     let prefix=arr[0]
+//     for(let i=0;i<arr.length;i++){
+//       while(arr[i].indexOf(prefix) !==0){
+//       prefix=prefix.substring(0,prefix.length-1)
+//       if(prefix=="") return "";
+
+//       }
+//     }
+//     return prefix
+// }
+
+// console.log(longestCommonPrefix(["flower", "flow", "flight"])); // Output: "fl"
+
+
+
+
+
+// const longestCommonPrefix=(arr)=>{
+//     let prefix=arr[0];
+//     if(!arr.length) return ""
+//     for(let i=0;i<arr.length;i++){
+//         while(arr[i].indexOf(prefix)!=0){
+//            prefix=prefix.substring(0,prefix.length-1);
+
+//            if(prefix=="") return "";
+//         }
+//     }
+//     return prefix
+// }
+
+
+
+
+
+// console.log(longestCommonPrefix(["flower", "flow", "flight"])); // Output: "fl"
+
+
+
+// This solution simulates the behavior of a queue (FIFO) using two stacks (LIFO). Elements are added to one stack and moved to another stack when dequeuing. The time complexity for both enqueue and dequeue operations is O(1) on average.
+
+
+// class Queue{
+
+//     constructor(){
+//         this.stack1=[];
+//         this.stack2=[];
+//     }
+
+
+//     enqueue(x){
+//         this.stack1.push(x)
+//     }
+
+//     dequeue(){
+//         if(this.stack2.length==0){
+//             while(this.stack1.length>0){
+//                 this.stack2.push(this.stack1.pop())
+//             }
+//         }
+//         return this.stack2.pop()
+//     }
+// }
+
+// const queue=new Queue();
+// queue.enqueue(1);
+// queue.enqueue(2);
+// console.log(queue.dequeue())
+// console.log(queue.dequeue())
+
+
+
+// const moveZeroes=(arr)=>{
+//     let index=0;
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i]!=0){
+//             arr[index++]=arr[i];
+//         }
+//     }
+
+//     for(let j=index;j<arr.length;j++){
+//       arr[j]=0
+//     }
+// return arr
+// }
+
+// const moveZeroes=(arr)=>{
+//  let index=arr.length-1;
+//  for(let i=arr.length-1;i>=0;i--){
+//     if(arr[i]!=0){
+//         arr[index--]=arr[i];
+//     }
+//  }
+//  while(index>=0){
+//     arr[index--]=0
+//  }
+//  return arr
+// }
+
+
+
+
+// const nums = [0, 1, 0, 3, 12];
+// console.log(moveZeroes(nums));
+
+
+// function productExceptSelf(nums) {
+//     const result = new Array(nums.length).fill(1);
+//     let prefix = 1;
+//     let suffix = 1;
+
+//     for (let i = 0; i < nums.length; i++) {
+//         result[i] *= prefix;
+//         prefix *= nums[i];
+//         console.log(result[i])
+//     }
+
+//     for (let i = nums.length - 1; i >= 0; i--) {
+//         result[i] *= suffix;
+//         suffix *= nums[i];
+//         console.log(result[i])
+
+//     }
+
+
+//     return result;
+// }
+
+
+// const nums = [1, 2, 3, 4];
+// console.log(productExceptSelf(nums)); // Output: [24, 12, 8, 6]
+
+
+// function findDuplicate(nums) {
+//     let slow = nums[0];
+//     let fast = nums[0];
+//     do {
+//         slow = nums[slow];
+//         fast = nums[nums[fast]];
+//     } 
+//     while (slow !== fast);
+//     slow = nums[0];
+//     while (slow !== fast) {
+//         slow = nums[slow];
+//         fast = nums[fast];
+//     }
+
+//     // return slow;
+// }
+
+
+// const nums = [1, 3, 4, 2, 2];
+// console.log(findDuplicate(nums)); // Output: 2
+
+
+// const lengthOfLongestSubstring=(str)=>{
+//     let left=0;
+//     let maxLength=0
+//     const map=new Map()
+//     for(let i=0;i<str.length;i++){
+//         if(map.has(str[i])){
+//             left=Math.max(map.get(str[i])+1,left)
+     
+//         }
+//         map.set(s[i],i)
+//         maxLength=Math.max(maxLength,i-left+1)
+//     }
+//     return str.slice(0,maxLength)
+// }
+
+// const s = "abcdabcdbb";
+// console.log(lengthOfLongestSubstring(s)); // Output: 3 ("abc" is the longest substring)
+
+
+// function isAnagram(s, t) {
+//     if(s.length!=t.length) return false;
+// let result=new Array(26).fill(0);
+// for(let i=0;i<s.length;i++){
+//     result[s.charCodeAt(i)-97]++;
+//     result[t.charCodeAt(i) -97]--;
+// }
+// return result.every(num=>num===0)
+// }
+
+// const s = "anagram";
+// const t = "nagaram";
+// console.log(isAnagram(s, t)); // Output: true
+
+// function groupAnagrams(strs) {
+//     const map = new Map();
+
+//     for (let str of strs) {
+//         const sorted = str.split('').sort().join('');
+        
+//         if (!map.has(sorted)) {
+//             map.set(sorted, []);
+//         }
+//         map.get(sorted).push(str);
+//     }
+
+//     return Array.from(map.values());
+// }
+
+// const strs = ["eat", "tea", "tan", "ate", "nat", "bat"];
+// console.log(groupAnagrams(strs)); 
+// // Output: [["eat","tea","ate"],["tan","nat"],["bat"]]
 
