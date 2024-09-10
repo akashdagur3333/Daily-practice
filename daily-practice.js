@@ -912,3 +912,138 @@ console.log('let start with daily practice')
 // console.log(groupAnagrams(strs)); 
 // // Output: [["eat","tea","ate"],["tan","nat"],["bat"]]
 
+// const findMaxAndMin=(arr)=>{
+//     let min=arr[0];
+//     let max=arr[0];
+//     if(!arr.length) return {max:undefined,min:undefined};
+//     for(let a of arr){
+//         if(a>max){
+//             max=a
+//         }
+//         else if(a<min){
+//             min=a
+//         }
+//     }
+//     return {max,min}
+// }
+
+
+
+// const arr1 = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+// console.log(findMaxAndMin(arr1))
+
+
+// const reverseArray=(arr)=>{
+//     let left =0;
+//     let right=arr.length-1;
+//     while(left<right){
+//        [ arr[left],arr[right]]=[ arr[right],arr[left]]
+//        left++;
+//        right--
+//     }
+//     return arr
+// }
+
+// const arr4 = [1, 2, 3, 4, 5];
+// console.log(reverseArray(arr4))
+
+
+// const findSecondLargest=(arr)=>{
+//     let largest=-Infinity;
+//     let secondLargest=-Infinity
+
+//     for(let a of arr)
+//         {
+//             if(a>largest){
+//                 secondLargest=largest;
+//                 largest=a
+//             }
+//             else if (a>secondLargest){
+//                 secondLargest=a
+//             }
+//         }
+//         return {largest,secondLargest}
+// }
+
+// const arr1 = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
+// console.log(findSecondLargest(arr1)); 
+
+
+
+// const nonZeroes=(arr)=>{
+//     let realpos=0;
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i]!=0){
+//             if(realpos!=i){
+//                 [arr[realpos],arr[i]]= [arr[i],arr[realpos]]
+//             }
+//             realpos++
+//         }
+
+//     }
+//     return arr
+// }
+
+
+// let nums = [0, 1, 0, 3, 12]
+
+// console.log(nonZeroes(nums))
+
+
+// const isPalindrome=(name)=>{
+//     name=name.toLowerCase().replace('/[^a-z0-9]/g','')
+//     let left=0;
+//     let right=name.length-1;
+//     while(left<right){
+//         if(name[left]!=name[right]){
+//             return false;
+//         }
+//         left++;
+//         right--;
+
+//     }
+//     return true
+// }
+
+
+// console.log(isPalindrome("raCecar")); // Output: true
+
+// const countFrequency=(name)=>{
+//     const result={};
+//     for(let a of name){
+//         result[a]=(result[a] ||0)+1
+//     }
+//     return result
+// }
+
+
+// console.log(countFrequency("mississippi")); 
+
+
+
+// // How to reverse a string?
+// const reverseString = (s) => {
+//     // Convert the string to an array
+//     let arr = s.split('');
+
+//     // Two-pointer approach
+//     let left = 0;
+//     let right = arr.length - 1;
+    
+//     while (left < right) {
+//         // // Swap the characters
+//         // let temp = arr[left];
+//         // arr[left] = arr[right];
+//         // arr[right] = temp;
+
+//         [arr[left],arr[right]]=  [arr[right],arr[left]]
+//         // Move pointers towards the center
+//         left++;
+//         right--;
+//     }
+
+//     // Join the array back into a string and return it
+//     return arr.join('');
+// };
+
+// console.log(reverseString("hello"));   // Output: "olleh"
